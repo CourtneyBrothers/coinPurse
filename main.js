@@ -15,23 +15,36 @@ var dime = 0.10;
 var nickel = 0.05;
 var penny = 0.01;
 
+
 function coinCounter (coinAmount) {
   // Initialize a JavaScript object to hold the coins
-  var coinPurse = {};
+  var coinPurse = {
+    quarter: 0,
+    dime: 0,
+    nickel: 0,
+    penney: 0
+  };
+
 
   //let numberOfQuarters = coinAmount % quarter;
   //console.log(numberOfQuarters);
   //console.log( 890 % 25); //Why is this two different numbers?
-  for (var i =0; j=0, k=0, l=0; i < 4; i++) {
+  for (let i = coinAmount; coinAmount != 0; i = i - currentCoin) {
+    console.log(i);
       if (coinAmount > 0.25) {
         coinAmount = coinAmount - quarter;
         console.log(coinAmount);
+        coinPurse.quarter++;
         i++;
       } 
-  for (0.10 < coinAmount < 0.25){
+      if (0.10 < coinAmount < 0.25){
+        console.log(coinAmount);
         coinAmount = coinAmount - dime;
         j++;
       } else if (0.05 < coinAmount < 0.10){
+
+        console.log(coinAmount);
+        
         coinAmount = coinAmount - nickel;
         k++;
       } else if (0.01 < coinAmount < 0.05){
